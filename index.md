@@ -167,3 +167,10 @@ I'm always open to discussing new opportunities and interesting projects. **IBM 
 **Location**: {{ site.author.location }}
 
 ---
+
+<div class="site-stats">
+    <img src="https://komarev.com/ghpvc/?username=NOF03&label=Views&color=efbf04&style=flat-square" alt="Profile Views">
+</div>
+
+*Built with ❤️ using Jekyll and GitHub Pages • IBM Certified Full Stack Developer*
+{: .footer-text}
