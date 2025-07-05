@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Full-Stack Software Engineer"
+title: "Software Engineer"
 ---
 
 <div class="hero-image-container">
@@ -12,7 +12,7 @@ title: "Full-Stack Software Engineer"
 # Nuno Oliveira Fernandes
 {: .hero-title}
 
-## Full-Stack Software Engineer & Master's Student
+## Msc Student in Software Engineering
 {: .hero-subtitle}
 
 At 21 years old and completing my Master's in Software Engineering at FEUP, I possess strong interest in Solution Architecture and DevOps Engineering, and practical experience in full-stack development with **Next.js**, **Django**, **Spring Boot**, and **Laravel**. **IBM Certified** in Full Stack Development, Back-End Development, and DevOps Engineering.
