@@ -1,0 +1,272 @@
+// Variables
+$black: #000000;
+$gold: #FFD700;
+$gold-dark: #DAA520;
+$white: #FFFFFF;
+$gray-light: #F8F9FA;
+$gray-dark: #666666;
+$font-family: 'Inter', sans-serif;
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  line-height: 1.6;
+  color: $black;
+  background-color: $white;
+}
+
+// Navigation
+.navbar {
+  background: $black;
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-brand {
+    color: $gold;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .nav-link {
+    color: $white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $gold;
+    }
+  }
+}
+
+// Main Content
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 100px 2rem 2rem;
+}
+
+// Typography
+h1 {
+  &.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: $black;
+    text-align: center;
+    margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+h2 {
+  &.hero-subtitle {
+    font-size: 1.5rem;
+    color: $gold-dark;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+
+  &.section-title {
+    font-size: 2.2rem;
+    color: $black;
+    margin: 3rem 0 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid $gold;
+    font-weight: 600;
+  }
+}
+
+h3 {
+  color: $gold-dark;
+  font-size: 1.3rem;
+  margin: 2rem 0 1rem;
+  font-weight: 600;
+}
+
+// Paragraphs
+p {
+  margin-bottom: 1rem;
+
+  &.hero-description {
+    font-size: 1.1rem;
+    text-align: center;
+    color: $gray-dark;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// Buttons
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  margin: 0 0.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  &.btn-primary {
+    background: $gold;
+    color: $black;
+
+    &:hover {
+      background: $gold-dark;
+      transform: translateY(-2px);
+    }
+  }
+
+  &.btn-secondary {
+    border: 2px solid $gold;
+    color: $gold-dark;
+
+    &:hover {
+      background: $gold;
+      color: $black;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.hero-buttons {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+// Lists
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+// Strong text
+strong {
+  color: $gold-dark;
+  font-weight: 600;
+}
+
+// Links
+a {
+  color: $gold-dark;
+  text-decoration: none;
+
+  &:hover {
+    color: $black;
+    text-decoration: underline;
+  }
+}
+
+// Code blocks
+code {
+  background: $gray-light;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+// Horizontal rules
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, transparent, $gold, transparent);
+  margin: 3rem 0;
+}
+
+// Blockquotes
+blockquote {
+  border-left: 4px solid $gold;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: $gray-dark;
+}
+
+// Tables (if needed)
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+
+  th, td {
+    padding: 0.5rem;
+    border: 1px solid $gray-light;
+    text-align: left;
+  }
+
+  th {
+    background: $gold;
+    color: $black;
+    font-weight: 600;
+  }
+}
+
+// Footer
+.footer-text {
+  text-align: center;
+  color: $gray-dark;
+  font-style: italic;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid $gray-light;
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .content {
+    padding: 80px 1rem 1rem;
+  }
+
+  .nav-container {
+    padding: 0 1rem;
+  }
+
+  .hero-buttons {
+    .btn {
+      display: block;
+      margin: 0.5rem auto;
+      width: fit-content;
+    }
+  }
+
+  h2.section-title {
+    font-size: 1.8rem;
+  }
+}
