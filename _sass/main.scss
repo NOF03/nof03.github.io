@@ -1,10 +1,11 @@
-// Variables
+// Updated Color Variables
 $black: #000000;
-$gold: #FFD700;
-$gold-dark: #DAA520;
+$gold: #EFBF04;           // Your specified gold
+$gold-dark: #856A00;      // Your specified gold-dark
 $white: #FFFFFF;
 $gray-light: #F8F9FA;
 $gray-dark: #666666;
+$gray-darker: #333333;
 $font-family: 'Inter', sans-serif;
 
 // Reset
@@ -17,18 +18,20 @@ $font-family: 'Inter', sans-serif;
 body {
   font-family: $font-family;
   line-height: 1.6;
-  color: $black;
-  background-color: $white;
+  color: $white;
+  background-color: $black;  // Changed to black background
 }
 
 // Navigation
 .navbar {
-  background: $black;
+  background: rgba($black, 0.95);
+  backdrop-filter: blur(10px);
   padding: 1rem 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
+  border-bottom: 2px solid $gold;
 
   .nav-container {
     max-width: 1200px;
@@ -44,6 +47,7 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     text-decoration: none;
+    transition: color 0.3s ease;
 
     &:hover {
       color: $white;
@@ -69,9 +73,40 @@ body {
 
 // Main Content
 .content {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 100px 2rem 2rem;
+  padding: 120px 2rem 2rem;
+}
+
+// Hero Photo Section
+.hero-image-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero-photo {
+  display: inline-block;
+  position: relative;
+
+  .profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid $gold;
+    box-shadow: 0 0 30px rgba($gold, 0.3);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba($gold, 0.5);
+    }
+
+    @media (max-width: 768px) {
+      width: 150px;
+      height: 150px;
+    }
+  }
 }
 
 // Typography
@@ -79,9 +114,10 @@ h1 {
   &.hero-title {
     font-size: 3.5rem;
     font-weight: 700;
-    color: $black;
+    color: $white;
     text-align: center;
     margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba($black, 0.5);
 
     @media (max-width: 768px) {
       font-size: 2.5rem;
@@ -92,7 +128,7 @@ h1 {
 h2 {
   &.hero-subtitle {
     font-size: 1.5rem;
-    color: $gold-dark;
+    color: $gold;
     text-align: center;
     margin-bottom: 2rem;
     font-weight: 500;
@@ -100,33 +136,53 @@ h2 {
 
   &.section-title {
     font-size: 2.2rem;
-    color: $black;
+    color: $white;
     margin: 3rem 0 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 3px solid $gold;
     font-weight: 600;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, $gold, $gold-dark);
+    }
   }
 }
 
 h3 {
-  color: $gold-dark;
+  color: $gold;
   font-size: 1.3rem;
   margin: 2rem 0 1rem;
   font-weight: 600;
 }
 
+h4 {
+  color: $gold-dark;
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.5rem;
+  font-weight: 500;
+}
+
 // Paragraphs
 p {
   margin-bottom: 1rem;
+  color: $white;
 
   &.hero-description {
     font-size: 1.1rem;
     text-align: center;
-    color: $gray-dark;
+    color: rgba($white, 0.9);
     margin-bottom: 2rem;
-    max-width: 600px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.7;
   }
 }
 
@@ -139,25 +195,31 @@ p {
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 
   &.btn-primary {
-    background: $gold;
+    background: linear-gradient(135deg, $gold, $gold-dark);
     color: $black;
+    box-shadow: 0 4px 15px rgba($gold, 0.3);
 
     &:hover {
-      background: $gold-dark;
+      background: linear-gradient(135deg, $gold-dark, $gold);
       transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba($gold, 0.4);
     }
   }
 
   &.btn-secondary {
     border: 2px solid $gold;
-    color: $gold-dark;
+    color: $gold;
+    background: transparent;
 
     &:hover {
       background: $gold;
       color: $black;
       transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba($gold, 0.3);
     }
   }
 }
@@ -174,39 +236,43 @@ ul, ol {
 
   li {
     margin-bottom: 0.5rem;
+    color: $white;
   }
 }
 
 // Strong text
 strong {
-  color: $gold-dark;
+  color: $gold;
   font-weight: 600;
 }
 
 // Links
 a {
-  color: $gold-dark;
+  color: $gold;
   text-decoration: none;
+  transition: color 0.3s ease;
 
   &:hover {
-    color: $black;
+    color: $white;
     text-decoration: underline;
   }
 }
 
 // Code blocks
 code {
-  background: $gray-light;
+  background: rgba($gold, 0.1);
+  color: $gold;
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
   font-family: 'Courier New', monospace;
+  border: 1px solid rgba($gold, 0.2);
 }
 
 // Horizontal rules
 hr {
   border: none;
   height: 2px;
-  background: linear-gradient(to right, transparent, $gold, transparent);
+  background: linear-gradient(to right, transparent, $gold, $gold-dark, transparent);
   margin: 3rem 0;
 }
 
@@ -216,7 +282,31 @@ blockquote {
   padding-left: 1rem;
   margin: 1rem 0;
   font-style: italic;
-  color: $gray-dark;
+  color: rgba($white, 0.8);
+  background: rgba($gold, 0.05);
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+// Certification badges/emojis
+.section-title + p {
+  strong {
+    font-size: 1.1rem;
+
+    &:before {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+// Enhanced styling for certifications section
+h3 + p {
+  strong {
+    display: block;
+    margin: 1rem 0 0.5rem;
+    font-size: 1.1rem;
+    color: $gold;
+  }
 }
 
 // Tables (if needed)
@@ -224,15 +314,17 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin: 1rem 0;
+  background: rgba($white, 0.05);
 
   th, td {
-    padding: 0.5rem;
-    border: 1px solid $gray-light;
+    padding: 0.75rem;
+    border: 1px solid rgba($gold, 0.2);
     text-align: left;
+    color: $white;
   }
 
   th {
-    background: $gold;
+    background: linear-gradient(135deg, $gold, $gold-dark);
     color: $black;
     font-weight: 600;
   }
@@ -241,17 +333,17 @@ table {
 // Footer
 .footer-text {
   text-align: center;
-  color: $gray-dark;
+  color: rgba($white, 0.7);
   font-style: italic;
   margin-top: 3rem;
   padding-top: 2rem;
-  border-top: 1px solid $gray-light;
+  border-top: 1px solid rgba($gold, 0.3);
 }
 
 // Responsive Design
 @media (max-width: 768px) {
   .content {
-    padding: 80px 1rem 1rem;
+    padding: 100px 1rem 1rem;
   }
 
   .nav-container {
@@ -269,4 +361,25 @@ table {
   h2.section-title {
     font-size: 1.8rem;
   }
+
+  .hero-photo .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+// Scroll animations (optional enhancement)
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content > * {
+  animation: fadeInUp 0.6s ease-out;
 }
