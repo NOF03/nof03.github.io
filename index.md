@@ -18,7 +18,7 @@ title: "Software Engineer"
 At 21 years old and completing my Master's in Software Engineering at FEUP, I possess strong interest in Solution Architecture and DevOps Engineering, and practical experience in full-stack development with **Next.js**, **Django**, **Spring Boot**, and **Laravel**. **IBM Certified** in Full Stack Development, Back-End Development, and DevOps Engineering.
 {: .hero-description}
 
-[Get In Touch](#contact){: .btn .btn-primary} [View Projects](#projects){: .btn .btn-secondary}
+[Get In Touch](#contact-me){: .btn .btn-primary} [View Projects](#featured-projects){: .btn .btn-secondary}
 {: .hero-buttons}
 
 ---
@@ -167,4 +167,3 @@ I'm always open to discussing new opportunities and interesting projects. **IBM 
 **Location**: {{ site.author.location }}
 
 ---
-
