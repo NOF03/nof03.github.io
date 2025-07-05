@@ -1,11 +1,15 @@
-// Updated Color Variables
-$black: #000000;
-$gold: #EFBF04;           // Your specified gold
-$gold-dark: #856A00;      // Your specified gold-dark
+// Improved Color Variables for Better UI/UX
+$black: #0A0A0A;
+$black-light: #1A1A1A;
+$black-lighter: #2A2A2A;
+$gold: #EFBF04;
+$gold-dark: #856A00;
+$gold-light: #F5D76E;
 $white: #FFFFFF;
-$gray-light: #F8F9FA;
+$gray-light: #E5E5E5;
+$gray-medium: #B0B0B0;
 $gray-dark: #666666;
-$gray-darker: #333333;
+$accent-blue: #4A90E2;  // For DevOps elements
 $font-family: 'Inter', sans-serif;
 
 // Reset
@@ -17,21 +21,23 @@ $font-family: 'Inter', sans-serif;
 
 body {
   font-family: $font-family;
-  line-height: 1.6;
-  color: $white;
-  background-color: $black;  // Changed to black background
+  line-height: 1.7;
+  color: $gray-light;  // Better readability than pure white
+  background: linear-gradient(135deg, $black 0%, $black-light 100%);
+  min-height: 100vh;
 }
 
 // Navigation
 .navbar {
   background: rgba($black, 0.95);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   padding: 1rem 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
   border-bottom: 2px solid $gold;
+  box-shadow: 0 2px 20px rgba($gold, 0.1);
 
   .nav-container {
     max-width: 1200px;
@@ -47,26 +53,30 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 
     &:hover {
-      color: $white;
+      color: $gold-light;
+      transform: scale(1.05);
     }
   }
 
   .nav-links {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   .nav-link {
-    color: $white;
-    font-size: 1.2rem;
+    color: $gray-light;
+    font-size: 1.1rem;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 5px;
 
     &:hover {
       color: $gold;
+      background: rgba($gold, 0.1);
     }
   }
 }
@@ -78,15 +88,20 @@ body {
   padding: 120px 2rem 2rem;
 }
 
-// Hero Photo Section
+// FIXED: Hero Photo Section - Proper Centering
 .hero-image-container {
   text-align: center;
   margin-bottom: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-photo {
-  display: inline-block;
-  position: relative;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
 
   .profile-image {
     width: 200px;
@@ -94,12 +109,19 @@ body {
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid $gold;
-    box-shadow: 0 0 30px rgba($gold, 0.3);
+    box-shadow:
+            0 0 30px rgba($gold, 0.3),
+            0 0 60px rgba($gold, 0.1);
     transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
 
     &:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 40px rgba($gold, 0.5);
+      box-shadow:
+              0 0 40px rgba($gold, 0.5),
+              0 0 80px rgba($gold, 0.2);
+      border-color: $gold-light;
     }
 
     @media (max-width: 768px) {
@@ -109,7 +131,7 @@ body {
   }
 }
 
-// Typography
+// Enhanced Typography for Better Readability
 h1 {
   &.hero-title {
     font-size: 3.5rem;
@@ -117,7 +139,11 @@ h1 {
     color: $white;
     text-align: center;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba($black, 0.5);
+    text-shadow: 2px 2px 4px rgba($black, 0.8);
+    background: linear-gradient(135deg, $white, $gray-light);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 
     @media (max-width: 768px) {
       font-size: 2.5rem;
@@ -127,11 +153,12 @@ h1 {
 
 h2 {
   &.hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: $gold;
     text-align: center;
     margin-bottom: 2rem;
     font-weight: 500;
+    text-shadow: 1px 1px 2px rgba($black, 0.5);
   }
 
   &.section-title {
@@ -139,64 +166,71 @@ h2 {
     color: $white;
     margin: 3rem 0 1.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 3px solid $gold;
     font-weight: 600;
     position: relative;
+    text-align: left;
 
     &::after {
       content: '';
       position: absolute;
-      bottom: -3px;
+      bottom: 0;
       left: 0;
-      width: 50px;
+      width: 60px;
       height: 3px;
       background: linear-gradient(90deg, $gold, $gold-dark);
+      border-radius: 2px;
     }
   }
 }
 
 h3 {
-  color: $gold;
-  font-size: 1.3rem;
+  color: $gold-light;
+  font-size: 1.4rem;
   margin: 2rem 0 1rem;
   font-weight: 600;
 }
 
 h4 {
-  color: $gold-dark;
-  font-size: 1.1rem;
+  color: $gold;
+  font-size: 1.2rem;
   margin: 1.5rem 0 0.5rem;
   font-weight: 500;
 }
 
-// Paragraphs
+// Improved Paragraph Styling
 p {
-  margin-bottom: 1rem;
-  color: $white;
+  margin-bottom: 1.2rem;
+  color: $gray-light;
+  line-height: 1.7;
 
   &.hero-description {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     text-align: center;
-    color: rgba($white, 0.9);
-    margin-bottom: 2rem;
+    color: $gray-medium;
+    margin-bottom: 2.5rem;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.7;
+    line-height: 1.8;
+    padding: 1rem;
+    background: rgba($gold, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba($gold, 0.1);
   }
 }
 
-// Buttons
+// Enhanced Buttons
 .btn {
   display: inline-block;
-  padding: 12px 30px;
+  padding: 14px 35px;
   margin: 0 0.5rem;
-  border-radius: 30px;
+  border-radius: 25px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-size: 0.9rem;
 
   &.btn-primary {
     background: linear-gradient(135deg, $gold, $gold-dark);
@@ -204,9 +238,9 @@ p {
     box-shadow: 0 4px 15px rgba($gold, 0.3);
 
     &:hover {
-      background: linear-gradient(135deg, $gold-dark, $gold);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba($gold, 0.4);
+      background: linear-gradient(135deg, $gold-light, $gold);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba($gold, 0.4);
     }
   }
 
@@ -218,126 +252,134 @@ p {
     &:hover {
       background: $gold;
       color: $black;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba($gold, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba($gold, 0.3);
     }
   }
 }
 
 .hero-buttons {
   text-align: center;
-  margin: 2rem 0;
+  margin: 2.5rem 0;
 }
 
-// Lists
+// Better List Styling
 ul, ol {
-  margin: 1rem 0;
+  margin: 1.2rem 0;
   padding-left: 2rem;
 
   li {
-    margin-bottom: 0.5rem;
-    color: $white;
-  }
-}
+    margin-bottom: 0.8rem;
+    color: $gray-light;
 
-// Strong text
-strong {
-  color: $gold;
-  font-weight: 600;
-}
-
-// Links
-a {
-  color: $gold;
-  text-decoration: none;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: $white;
-    text-decoration: underline;
-  }
-}
-
-// Code blocks
-code {
-  background: rgba($gold, 0.1);
-  color: $gold;
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  font-family: 'Courier New', monospace;
-  border: 1px solid rgba($gold, 0.2);
-}
-
-// Horizontal rules
-hr {
-  border: none;
-  height: 2px;
-  background: linear-gradient(to right, transparent, $gold, $gold-dark, transparent);
-  margin: 3rem 0;
-}
-
-// Blockquotes
-blockquote {
-  border-left: 4px solid $gold;
-  padding-left: 1rem;
-  margin: 1rem 0;
-  font-style: italic;
-  color: rgba($white, 0.8);
-  background: rgba($gold, 0.05);
-  padding: 1rem;
-  border-radius: 4px;
-}
-
-// Certification badges/emojis
-.section-title + p {
-  strong {
-    font-size: 1.1rem;
-
-    &:before {
-      margin-right: 0.5rem;
+    &::marker {
+      color: $gold;
     }
   }
 }
 
-// Enhanced styling for certifications section
-h3 + p {
-  strong {
-    display: block;
-    margin: 1rem 0 0.5rem;
-    font-size: 1.1rem;
-    color: $gold;
+// Improved Strong Text
+strong {
+  color: $gold-light;
+  font-weight: 600;
+  background: rgba($gold, 0.1);
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+
+// Better Link Styling
+a {
+  color: $gold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $gold-light;
+    text-decoration: underline;
   }
 }
 
-// Tables (if needed)
+// Enhanced Code Blocks
+code {
+  background: rgba($gold, 0.15);
+  color: $gold-light;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  font-family: 'Courier New', monospace;
+  border: 1px solid rgba($gold, 0.3);
+  font-size: 0.9rem;
+}
+
+// Improved Horizontal Rules
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, transparent, $gold, $gold-dark, transparent);
+  margin: 4rem 0;
+  opacity: 0.7;
+}
+
+// Enhanced Blockquotes
+blockquote {
+  border-left: 4px solid $gold;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: $gray-medium;
+  background: rgba($gold, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba($gold, 0.1);
+}
+
+// Special styling for DevOps/Architecture elements
+.devops-highlight {
+  background: linear-gradient(135deg, rgba($accent-blue, 0.1), rgba($gold, 0.1));
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid $accent-blue;
+  margin: 1rem 0;
+}
+
+// Enhanced Tables
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1rem 0;
-  background: rgba($white, 0.05);
+  margin: 1.5rem 0;
+  background: rgba($black-light, 0.8);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba($gold, 0.1);
 
   th, td {
-    padding: 0.75rem;
-    border: 1px solid rgba($gold, 0.2);
+    padding: 1rem;
     text-align: left;
-    color: $white;
+    color: $gray-light;
+    border-bottom: 1px solid rgba($gold, 0.1);
   }
 
   th {
     background: linear-gradient(135deg, $gold, $gold-dark);
     color: $black;
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  tr:hover {
+    background: rgba($gold, 0.05);
   }
 }
 
-// Footer
+// Enhanced Footer
 .footer-text {
   text-align: center;
-  color: rgba($white, 0.7);
+  color: $gray-dark;
   font-style: italic;
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba($gold, 0.3);
+  margin-top: 4rem;
+  padding: 2rem;
+  border-top: 1px solid rgba($gold, 0.2);
+  background: rgba($black-light, 0.5);
+  border-radius: 8px;
 }
 
 // Responsive Design
@@ -368,7 +410,12 @@ table {
   }
 }
 
-// Scroll animations (optional enhancement)
+// Smooth Scroll Enhancement
+html {
+  scroll-behavior: smooth;
+}
+
+// Add subtle animations
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -382,4 +429,10 @@ table {
 
 .content > * {
   animation: fadeInUp 0.6s ease-out;
+}
+
+// Focus states for accessibility
+button:focus, a:focus, input:focus {
+  outline: 2px solid $gold;
+  outline-offset: 2px;
 }

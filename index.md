@@ -3,10 +3,11 @@ layout: default
 title: "Full-Stack Software Engineer"
 ---
 
-<div class="hero-photo">
-  <img src="assets/images/profile.jpeg" alt="Nuno Oliveira Fernandes" class="profile-image">
+<div class="hero-image-container">
+    <div class="hero-photo">
+        <img src="assets/images/profile.jpeg" alt="Nuno Oliveira Fernandes" class="profile-image">
+    </div>
 </div>
-{: .hero-image-container}
 
 # Nuno Oliveira Fernandes
 {: .hero-title}
@@ -14,7 +15,7 @@ title: "Full-Stack Software Engineer"
 ## Full-Stack Software Engineer & Master's Student
 {: .hero-subtitle}
 
-At 21 years old and completing my Master's in Software Engineering at FEUP, I possess strong interest and practical experience in full-stack development with **Next.js**, **Django**, **Spring Boot**, and **Laravel**. **IBM Certified** in Full Stack Development, Back-End Development, and DevOps Engineering.
+At 21 years old and completing my Master's in Software Engineering at FEUP, I possess strong interest in Solution Architecture and DevOps Engineering, and practical experience in full-stack development with **Next.js**, **Django**, **Spring Boot**, and **Laravel**. **IBM Certified** in Full Stack Development, Back-End Development, and DevOps Engineering.
 {: .hero-description}
 
 [Get In Touch](#contact){: .btn .btn-primary} [View Projects](#projects){: .btn .btn-secondary}
@@ -39,25 +40,6 @@ At 21 years old and completing my Master's in Software Engineering at FEUP, I po
 
 ---
 
-## Licenses & Certifications
-{: .section-title}
-
-### IBM Certified Professional
-**July 2024** • *IBM*
-
-**🏆 Full Stack Software Developer**
-Comprehensive certification covering end-to-end web development, from frontend frameworks to backend APIs and database integration.
-
-**🔧 Back-End Development**
-Advanced backend development practices including server-side programming, database design, API development, and cloud deployment strategies.
-
-**⚙️ DevOps and Software Engineering**
-Modern DevOps practices, CI/CD pipelines, containerization, infrastructure as code, and software engineering best practices.
-
-**Skills Demonstrated**: Full-stack development, backend architecture, DevOps automation, cloud technologies, software engineering principles
-
----
-
 ## Professional Experience
 {: .section-title}
 
@@ -78,6 +60,30 @@ Developed a patient management website allowing 4-5 psychologists to monitor the
 **Instituto Get.Start** • *Jul 2023*
 
 Implemented a **Moodle platform** for educational institution with **350+ students**, enabling innovative teaching approaches beyond traditional methods.
+
+---
+
+## Education
+{: .section-title}
+
+### Master's in Software Engineering
+**FEUP** • *Sep 2024 - Present*
+
+Good practices and in-depth understanding of the entire software process, from elicitation to maintenance. Further developed knowledge in Next.js, Spring Boot, and Docker.
+
+**Expected Average**: 16 marks
+
+### Bachelor's in Computer Engineering
+**UMa** • *Oct 2021 - Jul 2024*
+
+**Outstanding modules with grade A**: Internship, Web Development, Requirements Engineering
+
+**Final Average**: 16 marks (A)
+
+### Erasmus+ in Computer Engineering
+**University of Maribor, Slovenia** • *Feb 2024 - Jul 2024*
+
+**Final Average**: 9/10 marks
 
 ---
 
@@ -107,53 +113,43 @@ Platform with advanced functionalities including odds tracking and subscriptions
 
 ---
 
+## Licenses & Certifications
+{: .section-title}
+
+### IBM Certified Professional
+**July 2024** • *IBM*
+
+**🏆 Full Stack Software Developer**
+Comprehensive certification covering end-to-end web development, from frontend frameworks to backend APIs and database integration.
+
+**🔧 Back-End Development**
+Advanced backend development practices including server-side programming, database design, API development, and cloud deployment strategies.
+
+**⚙️ DevOps and Software Engineering**
+Modern DevOps practices, CI/CD pipelines, containerization, infrastructure as code, and software engineering best practices.
+
+**Skills Demonstrated**: Full-stack development, backend architecture, DevOps automation, cloud technologies, software engineering principles
+
+---
+
 ## Technical Skills
 {: .section-title}
 
 ### Programming Languages
-- **JavaScript** - Advanced (IBM Certified)
-- **Python** - Advanced (IBM Certified)
+- **JavaScript** - Advanced
+- **Python** - Advanced
 - **Java** - Intermediate
 - **PHP** - Intermediate
 
 ### Frameworks & Libraries
 - **Frontend**: Next.js, React, React Native, Vite
-- **Backend**: Django, Spring Boot, Laravel (IBM Certified)
+- **Backend**: Django, Spring Boot, Laravel
 - **Game Development**: Unity3D
 
 ### Databases & Cloud
 - **Databases**: Firebase, MySQL, PostgreSQL
-- **Cloud**: Google Cloud Functions, Azure (IBM Certified)
-- **DevOps**: Docker, Git, GitLab, GitHub (IBM Certified)
-
-### Certified Methodologies
-- **DevOps**: CI/CD, Infrastructure as Code (IBM Certified)
-- **Agile**: Scrum, Kanban
-- **Software Engineering**: Requirements Engineering, Architecture Design
-
----
-
-## Education
-{: .section-title}
-
-### Master's in Software Engineering
-**FEUP** • *Sep 2024 - Present*
-
-Good practices and in-depth understanding of the entire software process, from elicitation to maintenance. Further developed knowledge in Next.js, Spring Boot, and Docker.
-
-**Expected Average**: 16 marks
-
-### Bachelor's in Computer Engineering
-**UMa** • *Oct 2021 - Jul 2024*
-
-**Outstanding modules with grade A**: Internship, Web Development, Requirements Engineering
-
-**Final Average**: 16 marks (A)
-
-### Erasmus+ in Computer Engineering
-**University of Maribor, Slovenia** • *Feb 2024 - Jul 2024*
-
-**Final Average**: 9/10 marks
+- **Cloud**: Google Cloud Functions, Azure
+- **DevOps**: Docker, Git, GitLab, GitHub
 
 ---
 
@@ -164,8 +160,6 @@ I'm always open to discussing new opportunities and interesting projects. **IBM 
 
 **Email**: [{{ site.author.email }}](mailto:{{ site.author.email }})
 
-**Phone**: {{ site.author.phone }}
-
 **LinkedIn**: [{{ site.author.linkedin }}](https://linkedin.com/in/{{ site.author.linkedin }})
 
 **GitHub**: [{{ site.author.github }}](https://github.com/{{ site.author.github }})
@@ -174,5 +168,3 @@ I'm always open to discussing new opportunities and interesting projects. **IBM 
 
 ---
 
-*Built with ❤️ using Jekyll and GitHub Pages • IBM Certified Full Stack Developer*
-{: .footer-text}
